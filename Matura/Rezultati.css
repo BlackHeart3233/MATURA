@@ -1,0 +1,29 @@
+
+#tabela{
+    border: 1px solid black;
+    height: 89.7%;
+    width: 99.9%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:rgba(229,228,232,255);
+}
+table{
+    height: auto;
+    width: 70%;
+    margin-right: 26%;
+}
+th, td {
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+th{
+    font-size: 170%;
+    padding: 2%;
+    background-color: rgba(251,219,22,255);
+}
+td{
+    font-size: 140%;
+    background-color:rgba(229,228,255,255);
+}

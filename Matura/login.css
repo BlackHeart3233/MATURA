@@ -1,0 +1,14 @@
+
+#login{
+    display: grid;
+    margin-top: 10%;
+    margin-left: 65%;
+}
+
+#link_reg{
+    text-decoration: none;
+    color:rgba(229,228,232,255);
+    width: 45%;
+    text-align: center;
+   
+}

@@ -1,0 +1,39 @@
+html,body{
+    margin: 0;
+    background-color: rgba(229,228,232,255) ;   
+    height: 100%;
+}
+body {
+    display: grid;
+    place-items: center;
+    font-family: 'Poppins';}
+
+.inside{
+    height: 80%;
+    width: 80%;
+    background-color: rgba(0,86,161,255);
+    border-radius: 4%;
+}
+#vprasanje{
+    text-align: center;
+    font-size: 200%;
+    margin-top: 10%;
+    font-style: bold;
+}
+
+input{
+    width:35%;
+    display: inline;
+    height: 25%;
+    margin-top: 5%;
+    margin-right: 5%;
+   
+}
+
+#odgovor{
+    width: 60%;
+    height: 70%;
+    margin-left: 22%;
+    text-align: center;
+
+}

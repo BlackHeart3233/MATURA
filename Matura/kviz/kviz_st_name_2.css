@@ -1,0 +1,62 @@
+/* NAVIGACIJA */
+html,body{
+    margin: 0;
+    background-color:  rgba(229,228,232,255);;
+    height: 100%;
+}
+
+#navbar{
+    background-color: rgba(0,86,161,255);
+    overflow: hidden;
+}
+#logo{
+    height: 10%;
+}
+.gumb_nav{
+    font:rgba(229,228,232,255);
+    border: solid;
+    border-width: 1px;
+    background-color: rgba(251,219,22,255);
+    color: black;
+    padding: 0.9% 4%;
+    font-size: 100%;
+    cursor: pointer;
+    margin-top: 0.6%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 5%;
+    font-weight: bold;
+}
+.gumb_nav:hover{
+    background-color: rgba(235,200,10,235);
+}
+.nav_item{
+    float: left;
+    margin-right: 15% ;
+}   	
+
+/*NAVIGACIJAN*/
+#srednji{
+    background-image: url("/Matura/slike/zelenjava.jpg");
+    height:100%;
+    background-repeat: no-repeat;
+    background-size: 100%, 100%;
+    background-position-y: bottom;
+    
+}
+#izbira{
+    position: absolute;
+    width:40%;
+    height:40%;
+    margin-left:30%;  
+    margin-top:14%;
+}
+
+input{
+    display:block;
+    text-align:center;
+    width:30%;
+    margin-left:33%;
+    margin-bottom:10%;
+    
+   
+}

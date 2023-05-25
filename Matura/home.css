@@ -1,0 +1,35 @@
+
+#middle{
+    width:100% ;
+    height: 90%;
+    display: block;
+    background-image: url("slike/lidl_zaposlene.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-y: 20%;
+    display: grid;
+    place-items: center;
+    font-size: 500%;
+}
+
+#Uvod{
+    margin: auto;
+    text-decoration: none;
+    background-color:  rgba(251,219,22,255);
+    opacity: 0.6;
+    border-radius: 1cm;
+    width: 40%;
+    text-align: center;
+    font-size: 70%;
+}
+#Uvod:hover{
+    opacity: 1.0;
+    transition-delay: 150ms;
+}
+a:link {
+    text-decoration: none;
+    color:black;
+  }
+a:visited{
+    color: black;
+}
