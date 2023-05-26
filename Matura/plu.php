@@ -2,7 +2,6 @@
     <?php
     session_start();
 
-
     if(!isset($_SESSION['username'])){
         header('Location:http://localhost/Matura/login.php');
     }
@@ -60,10 +59,10 @@
         while ($izpis = mysqli_fetch_array($res)){
             $st =$izpis["plu_koda"];
             $ime=$izpis["Naziv"];
-            $slika ="slike/plu/". $izpis["slika"];
+            $slika ="/Matura/slike/plu/". $izpis["slika"];
             $class ="okvircek";
             echo "<div class=".$class.">";
-            echo  '<img class="slika" src="'.$slika.'">';
+            echo  '<img class="slika" src="'.$slika.'.jpg">';
             echo  '<div class="ime">'.$ime.'</div>';
             echo  '<div class="PLU">'.$st.'</div>';
 

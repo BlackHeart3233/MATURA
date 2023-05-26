@@ -27,7 +27,8 @@ input{
     height: 25%;
     margin-top: 5%;
     margin-right: 5%;
-   
+
+
 }
 
 #odgovor{
@@ -36,4 +37,7 @@ input{
     margin-left: 22%;
     text-align: center;
 
+}
+#stevilke{
+    border-radius: 5%;
 }

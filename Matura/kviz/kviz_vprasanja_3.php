@@ -18,7 +18,23 @@ $st_moznost = mysqli_fetch_assoc($res);
 $st_moznost =  $st_moznost["COUNT(*)"];
 $st_moznost = intval($st_moznost[0]);
 
+
 $dolzina= count($list);
+
+
+$sql = "SELECT ID FROM `plu` WHERE  kategorija_ID ='".$vrsta."';";
+$res = mysqli_query($povezava, $sql);
+
+$tabela_id = array();
+while ($id = mysqli_fetch_array($res)){
+    $idd = $id["ID"];
+    array_push($tabela_id,$idd);
+
+}
+
+
+
+
 
 if ($dolzina > 0){
     $zadnji = end($list);
@@ -36,10 +52,10 @@ if ($dolzina > 0){
 
 
 if ($st_moznost == $dolzina){
-    header('Location:http://localhost/Matura/Rezultati.php');
     $sql = "INSERT INTO rezultat (Pravilni, Vsi_mozni, Datum, kategorija_ID, ID_uporabnik) VALUES ('".$tocke."', '".$st_moznost."', '".date("Y.m.d")."', '".$vrsta."', '".$id_user."')";
     if ($povezava->query($sql) === TRUE) {
         echo "New record created successfully";
+        header('Location:http://localhost/Matura/Rezultati.php?="New record created successfully"');
       } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
       }
@@ -47,17 +63,17 @@ if ($st_moznost == $dolzina){
       $povezava->close();
     
 
-}else{
+}else
 
 
-
-
-
-$pravilni = rand(1, $st_moznost);
+$pravilni = array_rand($tabela_id,1);
+$pravilni = $tabela_id[$pravilni];
 while (in_array($pravilni,$list)){
-    $pravilni = rand(1, $st_moznost);
+    $pravilni = array_rand($tabela_id,1);
+    $pravilni = $tabela_id[$pravilni];
 }
 array_push($list,$pravilni);
+
 
 
 
@@ -69,17 +85,20 @@ $vprasanje  = $vprasanje["Naziv"];
 
 $list_st =array();
 array_push($list_st,$pravilni);
-$moznost = rand(1, $st_moznost);
+$moznost = array_rand($tabela_id,1);
+$moznost = $tabela_id[$moznost];
 
 
 
 for ($k =1;$k<4;$k++){
     while ($pravilni == $moznost or in_array($moznost,$list_st ) ){
-        $moznost = rand(1, $st_moznost);
+        $moznost = array_rand($tabela_id,1);
+        $moznost = $tabela_id[$moznost];
+
     }
     array_push($list_st,$moznost);
 } 
-}
+
 ?>
 
 <html>
@@ -87,6 +106,7 @@ for ($k =1;$k<4;$k++){
         <title>Kviz</title>
         <meta charset = "utf-8" />
         <link rel="stylesheet" href="kviz_vprasanja_3.css" >
+        <link rel="stylesheet" href="nav_bar.css" >
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
 
     </head>
@@ -108,7 +128,7 @@ for ($k =1;$k<4;$k++){
                     $koda = $koda["plu_koda"];
 
                     echo'<label for="stevilke"></label>';
-                    echo'<input class="gumb_nav" type="submit" id="stevilke" name="stevilke" value="'.$koda.'">';
+                    echo'<input class="nav_item gumb_nav " type="submit" id="stevilke" name="stevilke" value="'.$koda.'">';
 
                 }
                 $_SESSION["list"] = $list;
